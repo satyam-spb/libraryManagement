@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.springTutorial.libraryManagement.entity.Book;
+import com.springTutorial.libraryManagement.exception.BookNotFoundException;
 import com.springTutorial.libraryManagement.repository.BookRepository;
 
 
@@ -25,7 +26,7 @@ public class BookService {
 
     public Book getBookById(Long id){
         return bookRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Book with id %d not found".formatted(id)));
+        .orElseThrow(() -> new BookNotFoundException("Book with id %d not found".formatted(id)));
     }
 
     public Book updateBook(Long id, Book updatedBook){

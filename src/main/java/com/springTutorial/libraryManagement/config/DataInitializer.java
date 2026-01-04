@@ -19,6 +19,8 @@ public class DataInitializer {
                     book.setTitle("Book " + i);
                     book.setAuthor("Author " + i);
                     book.setIsbn("ISBN-000" + i);
+                    book.setTotalCopies(5);
+                    book.setAvailableCopies(5);
 
                     bookService.createBook(book);
                 }

@@ -22,6 +22,16 @@ public class Book {
     @Column(unique = true, nullable = false)
     private String isbn;
 
+    @Column()
+    private int totalCopies;
+
+    @Column()
+    private int availableCopies;
+
+    // JPA (Hibernate) requires a no-argument constructor (a constructor with no parameters) for every
+    // entity. It uses this to create an empty object before filling it with data from the database.
+    public Book(){}
+
     // Getters and setters
     public Long getId() {
         return id;
@@ -49,6 +59,14 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public void setTotalCopies(int totalCopies){
+        this.totalCopies = totalCopies;
+    }
+
+    public void setAvailableCopies(int availableCopies){
+        this.availableCopies = availableCopies;
     }
 
 }
