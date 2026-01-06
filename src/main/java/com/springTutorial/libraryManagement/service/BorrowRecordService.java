@@ -7,12 +7,11 @@ import org.springframework.stereotype.Service;
 import com.springTutorial.libraryManagement.entity.BorrowRecord;
 import com.springTutorial.libraryManagement.exception.BorrowRecordNotFoundException;
 import com.springTutorial.libraryManagement.repository.BorrowRecordRepository;
-import com.springTutorial.libraryManagement.repository.BorrowRecordRepository;
 
 @Service
-public class BorrowService {
+public class BorrowRecordService {
     private final BorrowRecordRepository borrowRecordRepository;
-    public BorrowService(BorrowRecordRepository borrowRecordRepository){
+    public BorrowRecordService(BorrowRecordRepository borrowRecordRepository){
         this.borrowRecordRepository = borrowRecordRepository;
     }
 
