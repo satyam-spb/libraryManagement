@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springTutorial.libraryManagement.entity.Book;
 import com.springTutorial.libraryManagement.entity.BorrowRecord;
 import com.springTutorial.libraryManagement.service.BorrowRecordService;
 
@@ -35,6 +36,11 @@ public class BorrowRecordController {
     @GetMapping("/{borrow_id}")
     public BorrowRecord getBorrowRecordById(@PathVariable Long borrow_id){
         return borrowRecordService.getBorrowRecordById(borrow_id);
+    }
+
+    @GetMapping("/most-borrowed/{year}/{month}")
+    public Book getMostBorrowedBook(@PathVariable int year, @PathVariable int month){
+        return borrowRecordService.getMostBorrowedBookByMonth(year,month);
     }
 
     @DeleteMapping("/{id}")

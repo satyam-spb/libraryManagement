@@ -69,4 +69,12 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
+    public int getAvailableCopies(){
+        return availableCopies;
+    }
+
+    public int getTotalCopies(){
+        return totalCopies;
+    }
+
 }
